@@ -52,3 +52,17 @@ A sample building ("Nile Tower", id 1) is seeded at startup.
 1. `GET /api/buildings/1`: building shows 5 rooms, 4 available.
 2. `POST /api/rooms/4/rent` with `{ "tenant": "Sara" }`.
 3. `GET /api/buildings/1` again: the room, its apartment and the building all show the new totals.
+
+## Front end (ClientApp)
+
+A small React + Vite + Tailwind UI, the same setup as the other projects. It shows the building tree, lets you add apartments and rooms, and rent or release rooms.
+
+```bash
+# terminal 1: backend on :8095
+dotnet run
+
+# terminal 2: UI on :8096 (proxies /api to :8095)
+cd ClientApp && npm install && npm run dev
+```
+
+Open http://localhost:8096
